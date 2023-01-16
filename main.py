@@ -71,9 +71,10 @@ class manager:
                 self.requests.append(pas.floor)
                     
     def move(self,req , elevator):
+        print('here')
         #10 time unit will be spent to go from a floor to another
         self.currtime += 5 * self.distance(elevator.current , req)
-        print('here')
+        
         elevator.current = req
         self.requests.remove(req)
 
