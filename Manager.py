@@ -20,18 +20,15 @@ class Manager:
     def getinput(self):
         while True:
             Frequest = input("What floor are you on?")
-            if Frequest == "finish":
-                self.elevator.timehandel()
-            else:
-                self.app(int(Frequest))
+            # if Frequest == "finish":
+            #     self.elevator.run()
+            self.app(int(Frequest))
             Irequest = input("Which floor are you going to?")
-            if Irequest == "finish":
-                self.elevator.timehandel()
-            else:
-                self.app(int(Irequest))
+            # if Irequest == "finish":
+            #     self.elevator.run()
+            self.app(int(Irequest))
 
 
 if __name__ == "__main__":
     m = Manager()
     m.getinput()
-

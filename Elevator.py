@@ -2,14 +2,16 @@ import threading
 import time
 
 
-class Elevator:
+class Elevator (threading.Thread):
 
     def __init__(self):
+        super().__init__()
         self.down = []
         self.up = []
         self.seek_sequence = []
         self.head = 7
         self.counter = 0
+        self.start()
 
     def optimation(self, arr, direction):
         if arr < self.head:
@@ -42,7 +44,7 @@ class Elevator:
             print(self.seek_sequence[i])
         print("--------------------------")
 
-    def timehandel(self):
+    def run(self):
         while True:
             if not self.seek_sequence:
                 pass
