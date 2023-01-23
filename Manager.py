@@ -20,12 +20,8 @@ class Manager:
     def getinput(self):
         while True:
             Frequest = input("What floor are you on?")
-            # if Frequest == "finish":
-            #     self.elevator.run()
             self.app(int(Frequest))
             Irequest = input("Which floor are you going to?")
-            # if Irequest == "finish":
-            #     self.elevator.run()
             self.app(int(Irequest))
 
 
