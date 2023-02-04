@@ -33,16 +33,12 @@ class Elevator (threading.Thread):
                     self.seek_sequence.append(cur_track)
                 direction = "down"
             run -= 1
-        print("Seek Sequence is")
         if self.counter == 0:
             self.counter += 1
         else:
             for i in range(self.counter):
                 self.seek_sequence.pop(0)
             self.counter += 1
-        for i in range(len(self.seek_sequence)):
-            print(self.seek_sequence[i])
-        print("--------------------------")
 
     def run(self):
         while True:
@@ -51,17 +47,17 @@ class Elevator (threading.Thread):
             elif self.head > self.seek_sequence[0]:
                 time.sleep(1)
                 self.head -= 1
-                print("--------------------------")
+                print("\n")
                 print("head is:", self.head)
                 print("--------------------------")
             elif self.head < self.seek_sequence[0]:
                 time.sleep(1)
                 self.head += 1
-                print("--------------------------")
+                print("\n")
                 print("head is:", self.head)
                 print("--------------------------")
             elif self.head == self.seek_sequence[0]:
-                print("--------------------------")
+                print("\n")
                 print(self.seek_sequence[0], "remove")
                 print("--------------------------")
                 self.seek_sequence.pop(0)

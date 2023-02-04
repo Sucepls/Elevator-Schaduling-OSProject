@@ -18,11 +18,12 @@ class Manager:
         self.elevator.optimation(self.arr, self.direction)
 
     def getinput(self):
-        while True:
-            Frequest = input("What floor are you on?")
-            self.app(int(Frequest))
-            Irequest = input("Which floor are you going to?")
-            self.app(int(Irequest))
+        try:
+            while True:
+                Frequest = input("What request do you have?")
+                self.app(int(Frequest))
+        except:
+            self.getinput()
 
 
 if __name__ == "__main__":
